@@ -92,7 +92,7 @@ export default function Header({ designMode, setDesignMode }) {
               letterSpacing: '0.2em',
               transition: 'color 0.4s ease'
             }}>
-              LOGANAVIATION
+              SYSTEMS
             </span>
           </div>
         </a>
@@ -231,4 +231,5 @@ export default function Header({ designMode, setDesignMode }) {
     </header>
   );
 }
+
 

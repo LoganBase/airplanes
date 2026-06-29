@@ -215,7 +215,7 @@ impl TelemetryStream {
           <p style={{ color: 'var(--text-secondary)' }}>
             {designMode === 'executive'
               ? 'Examine how LOGANAIR integrates high-performance cloud logic with physical flight systems, airframes, and ground handling operations.'
-              : 'We write clean, statically typed, highly optimized code. Explore the actual Go, TypeScript, and Rust solvers running inside LoganAviation pipelines.'}
+              : 'We write clean, statically typed, highly optimized code. Explore the actual Go, TypeScript, and Rust solvers running inside LOGANAIR pipelines.'}
           </p>
         </div>
 
@@ -480,4 +480,5 @@ impl TelemetryStream {
     </section>
   );
 }
+
 

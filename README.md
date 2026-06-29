@@ -1,6 +1,6 @@
-# LoganAviation (LOGANAIR Prototype)
+# LOGANAIR (LOGANAIR Prototype)
 
-Welcome to the **LoganAviation** production-ready website prototype, engineered by **LOGANAIR**. 
+Welcome to the **LOGANAIR** production-ready website prototype, engineered by **LOGANAIR**. 
 
 This system features **two distinct, fully interactive design directions** that can be toggled live on the running site for side-by-side executive comparison.
 
@@ -71,4 +71,5 @@ Validate correct bundling and preview the optimized build:
 npm run build
 npm run preview
 ```
+
 

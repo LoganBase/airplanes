@@ -270,7 +270,7 @@ export default function Hero({ designMode }) {
               <span>
                 {designMode === 'executive' 
                   ? 'ENTERPRISE OPERATIONAL METRICS // FAA & EASA VERIFIED' 
-                  : 'LOGANAVIATION PROTOCOL v4.1 ACTIVE'}
+                  : 'LOGANAIR PROTOCOL v4.1 ACTIVE'}
               </span>
             </div>
           </div>
@@ -406,4 +406,5 @@ export default function Hero({ designMode }) {
     </section>
   );
 }
+
 

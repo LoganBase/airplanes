@@ -90,7 +90,7 @@ export default function Footer() {
           alignItems: 'center'
         }}>
           <div>
-            &copy; {new Date().getFullYear()} LOGANAIR Group. All rights reserved. Built under operational mandate **LoganAviation**.
+            &copy; {new Date().getFullYear()} LOGANAIR Group. All rights reserved. Built under operational mandate **LOGANAIR**.
           </div>
           <div style={{ display: 'flex', gap: '24px' }}>
             <span style={{ color: 'var(--text-muted)' }}>Security Standard: ISO 27001</span>
@@ -113,4 +113,5 @@ export default function Footer() {
     </footer>
   );
 }
+
 
