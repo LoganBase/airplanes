@@ -1,6 +1,6 @@
-# LoganAviation (Amach Prototype)
+# LoganAviation (LOGANAIR Prototype)
 
-Welcome to the **LoganAviation** production-ready website prototype, engineered by **Amach**. 
+Welcome to the **LoganAviation** production-ready website prototype, engineered by **LOGANAIR**. 
 
 This system features **two distinct, fully interactive design directions** that can be toggled live on the running site for side-by-side executive comparison.
 
@@ -71,3 +71,4 @@ Validate correct bundling and preview the optimized build:
 npm run build
 npm run preview
 ```
+

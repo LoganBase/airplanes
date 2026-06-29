@@ -122,7 +122,7 @@ export default function DashboardExplorer({ designMode }) {
           <p style={{ color: 'var(--text-secondary)' }}>
             {designMode === 'executive' 
               ? 'Evaluate technical solutions mapped against strict FAA 14 CFR Part 117 / EASA regulatory frameworks. Inspect solver efficiency and real-time yield optimization metrics below.'
-              : 'Interact with our simulated core engines below. See how Amach solves safety-critical problems, reduces operational friction, and maximizes airline profitability in real-time.'}
+              : 'Interact with our simulated core engines below. See how LOGANAIR solves safety-critical problems, reduces operational friction, and maximizes airline profitability in real-time.'}
           </p>
         </div>
 
@@ -148,7 +148,7 @@ export default function DashboardExplorer({ designMode }) {
             <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
               <div style={{ width: '10px', height: '10px', borderRadius: '50%', backgroundColor: designMode === 'executive' ? '#10B981' : '#00F0FF', boxShadow: designMode === 'executive' ? '0 0 10px #10B981' : '0 0 10px #00F0FF' }}></div>
               <span style={{ fontFamily: 'var(--font-mono)', fontSize: '12px', color: '#FFF', fontWeight: 600, letterSpacing: '0.05em' }}>
-                {designMode === 'executive' ? 'AUDIT::AMACH_DECISION_ENGINE' : 'LOGAN-CORE-OPTIMIZER // ACTIVE_SESSION'}
+                {designMode === 'executive' ? 'AUDIT::LOGANAIR_DECISION_ENGINE' : 'LOGAN-CORE-OPTIMIZER // ACTIVE_SESSION'}
               </span>
             </div>
             {/* Tabs */}
@@ -223,11 +223,11 @@ export default function DashboardExplorer({ designMode }) {
 
                       {/* Comparison Table */}
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                        <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>PERFORMANCE MATRIX: MANUAL DISPATCH VS. AMACH ENGINE</span>
+                        <span style={{ fontSize: '11px', fontFamily: 'var(--font-mono)', color: 'var(--text-muted)' }}>PERFORMANCE MATRIX: MANUAL DISPATCH VS. LOGANAIR ENGINE</span>
                         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', padding: '10px 16px', background: 'rgba(0,0,0,0.3)', borderRadius: '6px', fontSize: '11px', fontFamily: 'var(--font-mono)', fontWeight: 600, color: 'var(--text-muted)' }}>
                           <span>METRIC</span>
                           <span>MANUAL SCHEDULING</span>
-                          <span>AMACH SOLVER</span>
+                          <span>LOGANAIR SOLVER</span>
                         </div>
                         <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr', padding: '10px 16px', fontSize: '13px', borderBottom: '1px solid rgba(255,255,255,0.02)' }}>
                           <span>Overtime Flight Legs Allocated</span>
@@ -306,7 +306,7 @@ export default function DashboardExplorer({ designMode }) {
                       <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
                         {designMode === 'executive'
                           ? 'Minimizes block-time delays, hotel routing logistics, and alternative segment passenger compensation during flight cancellations.'
-                          : 'Trigger a severe delay to simulate how Amach\'s event-driven scheduler reroutes crew, aircraft, and bags instantly.'}
+                          : 'Trigger a severe delay to simulate how LOGANAIR\'s event-driven scheduler reroutes crew, aircraft, and bags instantly.'}
                       </p>
                     </div>
                     <button 
@@ -634,3 +634,4 @@ export default function DashboardExplorer({ designMode }) {
     </section>
   );
 }
+

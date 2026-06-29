@@ -214,7 +214,7 @@ impl TelemetryStream {
           </h2>
           <p style={{ color: 'var(--text-secondary)' }}>
             {designMode === 'executive'
-              ? 'Examine how Amach integrates high-performance cloud logic with physical flight systems, airframes, and ground handling operations.'
+              ? 'Examine how LOGANAIR integrates high-performance cloud logic with physical flight systems, airframes, and ground handling operations.'
               : 'We write clean, statically typed, highly optimized code. Explore the actual Go, TypeScript, and Rust solvers running inside LoganAviation pipelines.'}
           </p>
         </div>
@@ -244,7 +244,7 @@ impl TelemetryStream {
               <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                 <Shield style={{ width: '16px', height: '16px', color: '#10B981' }} />
                 <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: '#FFF', fontWeight: 600, letterSpacing: '0.05em' }}>
-                  AMACH OPERATIONAL PROOFS
+                  LOGANAIR OPERATIONAL PROOFS
                 </span>
               </div>
               <div style={{ display: 'flex', gap: '8px', background: 'rgba(0,0,0,0.3)', padding: '4px', borderRadius: '8px' }}>
@@ -480,3 +480,4 @@ impl TelemetryStream {
     </section>
   );
 }
+

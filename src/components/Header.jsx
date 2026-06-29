@@ -82,7 +82,7 @@ export default function Header({ designMode, setDesignMode }) {
               letterSpacing: '0.05em',
               lineHeight: 1.1,
             }}>
-              AMACH
+              LOGANAIR
             </span>
             <span style={{
               fontFamily: 'var(--font-mono)',
@@ -231,3 +231,4 @@ export default function Header({ designMode, setDesignMode }) {
     </header>
   );
 }
+

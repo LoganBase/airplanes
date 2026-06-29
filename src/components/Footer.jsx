@@ -37,7 +37,7 @@ export default function Footer() {
                 <Plane style={{ color: '#FFFFFF', width: '16px', height: '16px', transform: 'rotate(-45deg)' }} />
               </div>
               <span style={{ fontFamily: 'var(--font-display)', fontSize: '18px', fontWeight: 800, color: '#FFF', letterSpacing: '0.05em' }}>
-                AMACH
+                LOGANAIR
               </span>
             </a>
             <p style={{ lineHeight: 1.6 }}>
@@ -71,7 +71,7 @@ export default function Footer() {
           {/* Links Column 3 */}
           <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
             <span style={{ fontFamily: 'var(--font-mono)', fontSize: '11px', color: '#FFF', fontWeight: 600, letterSpacing: '0.05em' }}>
-              AMACH GROUP
+              LOGANAIR GROUP
             </span>
             <a href="#hubs" className="footer-link">Dublin Head Office</a>
             <a href="#hubs" className="footer-link">London Division</a>
@@ -90,7 +90,7 @@ export default function Footer() {
           alignItems: 'center'
         }}>
           <div>
-            &copy; {new Date().getFullYear()} Amach Group. All rights reserved. Built under operational mandate **LoganAviation**.
+            &copy; {new Date().getFullYear()} LOGANAIR Group. All rights reserved. Built under operational mandate **LoganAviation**.
           </div>
           <div style={{ display: 'flex', gap: '24px' }}>
             <span style={{ color: 'var(--text-muted)' }}>Security Standard: ISO 27001</span>
@@ -113,3 +113,4 @@ export default function Footer() {
     </footer>
   );
 }
+

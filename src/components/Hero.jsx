@@ -92,7 +92,7 @@ export default function Hero({ designMode }) {
         }
         ctx.stroke();
 
-        // Draw Trend Line 2: Amach ML Fuel Optimization Curve (Emerald Green)
+        // Draw Trend Line 2: LOGANAIR ML Fuel Optimization Curve (Emerald Green)
         ctx.strokeStyle = '#10B981';
         ctx.lineWidth = 3.5;
         ctx.shadowBlur = 12;
@@ -121,7 +121,7 @@ export default function Hero({ designMode }) {
         // Highlight optimal bounds text
         ctx.fillStyle = '#10B981';
         ctx.font = 'bold 10px "JetBrains Mono"';
-        ctx.fillText("AMACH ML RECOMMENDATION [FL390]", activeX - 90, activeY - 15);
+        ctx.fillText("LOGANAIR ML RECOMMENDATION [FL390]", activeX - 90, activeY - 15);
 
       } else {
         // ALPHA CINEMATIC MODE: Render interactive network flow
@@ -316,9 +316,9 @@ export default function Hero({ designMode }) {
             lineHeight: 1.6,
           }}>
             {designMode === 'executive' ? (
-              'Amach delivers enterprise-grade software integration, automated crew rostering CSP solvers, and event-driven disruption recovery systems. Engineered for total compliance, security, and proven financial yield.'
+              'LOGANAIR delivers enterprise-grade software integration, automated crew rostering CSP solvers, and event-driven disruption recovery systems. Engineered for total compliance, security, and proven financial yield.'
             ) : (
-              'Amach engineers mission-critical cloud infrastructures and intelligent AI pipelines for global air carriers. We solve the industry\'s most complex mathematical optimization problems—keeping your crew, baggage, and fleet in perfect synchronization.'
+              'LOGANAIR engineers mission-critical cloud infrastructures and intelligent AI pipelines for global air carriers. We solve the industry\'s most complex mathematical optimization problems—keeping your crew, baggage, and fleet in perfect synchronization.'
             )}
           </p>
 
@@ -406,3 +406,4 @@ export default function Hero({ designMode }) {
     </section>
   );
 }
+
