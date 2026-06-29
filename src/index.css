@@ -1,7 +1,7 @@
 /* src/index.css */
 
 :root {
-  /* Premium Dark Theme Color Tokens */
+  /* Premium Dark Theme Color Tokens - Cinematic Version */
   --bg-base: #05050A;
   --bg-surface: #0E101D;
   --bg-surface-elevated: #16192E;
@@ -26,6 +26,25 @@
   color-scheme: dark;
 }
 
+/* Executive High-Trust Theme Override */
+.executive-mode {
+  --bg-base: #090C15;
+  --bg-surface: #111625;
+  --bg-surface-elevated: #1A2035;
+  
+  --primary: #1E40AF; /* Navy Cobalt */
+  --primary-glow: rgba(30, 64, 175, 0.15);
+  --secondary: #10B981; /* Emerald Green */
+  --accent: #0D9488; /* Teal */
+  
+  --text-primary: #F8FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #475569;
+  
+  --border-light: rgba(30, 64, 175, 0.15);
+  --border-medium: rgba(30, 64, 175, 0.35);
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -41,6 +60,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  transition: background-color 0.4s ease, color 0.4s ease;
 }
 
 #root {
@@ -71,6 +91,7 @@ h1, h2, h3, h4, h5, h6 {
   color: var(--text-primary);
   font-weight: 600;
   letter-spacing: -0.02em;
+  transition: color 0.4s ease;
 }
 
 /* Container */
@@ -111,7 +132,11 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--border-light);
   border-radius: 12px;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease, background-color 0.4s ease;
+}
+
+.executive-mode .glass-panel {
+  background: rgba(17, 22, 37, 0.75);
 }
 
 .glass-panel:hover {
@@ -141,12 +166,6 @@ h1, h2, h3, h4, h5, h6 {
   50% { transform: translateY(-8px) rotate(1deg); }
 }
 
-@keyframes particleFlow {
-  0% { transform: translateY(0) translateX(0); opacity: 0; }
-  50% { opacity: 0.6; }
-  100% { transform: translateY(-100px) translateX(20px); opacity: 0; }
-}
-
 /* Utility Animations */
 .animate-float {
   animation: float 6s ease-in-out infinite;
@@ -157,7 +176,7 @@ h1, h2, h3, h4, h5, h6 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(135deg, #2E6BFF, #1a4fcc);
+  background: linear-gradient(135deg, var(--primary), #1a4fcc);
   color: #FFFFFF;
   font-family: var(--font-display);
   font-weight: 500;
@@ -166,13 +185,13 @@ h1, h2, h3, h4, h5, h6 {
   border: none;
   cursor: pointer;
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 4px 15px rgba(46, 107, 255, 0.3);
+  box-shadow: 0 4px 15px var(--primary-glow);
   text-decoration: none;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(46, 107, 255, 0.4), 0 0 0 4px rgba(46, 107, 255, 0.2);
+  box-shadow: 0 6px 20px var(--primary-glow), 0 0 0 4px rgba(46, 107, 255, 0.2);
 }
 
 .btn-primary:active {
@@ -215,6 +234,13 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 500;
   letter-spacing: 0.05em;
   text-transform: uppercase;
+  transition: all 0.4s ease;
+}
+
+.executive-mode .badge {
+  background: rgba(16, 185, 129, 0.05);
+  color: var(--secondary);
+  border-color: rgba(16, 185, 129, 0.2);
 }
 
 /* Custom Grid backgrounds for Hero */

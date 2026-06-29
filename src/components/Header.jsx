@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Plane, Cpu, ShieldCheck } from 'lucide-react';
+import { Plane, Eye, ShieldCheck, FileText } from 'lucide-react';
 
-export default function Header() {
+export default function Header({ designMode, setDesignMode }) {
   const [latency, setLatency] = useState(18);
   const [scrolled, setScrolled] = useState(false);
 
@@ -62,11 +62,14 @@ export default function Header() {
             width: '40px',
             height: '40px',
             borderRadius: '8px',
-            background: 'linear-gradient(135deg, #2E6BFF, #6A00FF)',
+            background: designMode === 'executive' 
+              ? 'linear-gradient(135deg, #1E40AF, #10B981)' 
+              : 'linear-gradient(135deg, #2E6BFF, #6A00FF)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             boxShadow: '0 4px 12px rgba(46, 107, 255, 0.3)',
+            transition: 'all 0.4s ease'
           }}>
             <Plane style={{ color: '#FFFFFF', width: '20px', height: '20px', transform: 'rotate(-45deg)' }} />
           </div>
@@ -85,8 +88,9 @@ export default function Header() {
               fontFamily: 'var(--font-mono)',
               fontSize: '9px',
               fontWeight: 500,
-              color: '#00F0FF',
+              color: designMode === 'executive' ? '#10B981' : '#00F0FF',
               letterSpacing: '0.2em',
+              transition: 'color 0.4s ease'
             }}>
               LOGANAVIATION
             </span>
@@ -105,13 +109,37 @@ export default function Header() {
           <a href="#hubs" className="nav-link">Global Operations</a>
         </nav>
 
-        {/* Telemetry status & CTA */}
+        {/* Dynamic Mode Switcher & Telemetry */}
         <div style={{
           display: 'flex',
           alignItems: 'center',
-          gap: '20px',
+          gap: '16px',
         }}>
-          {/* Status Telemetry */}
+          {/* Mode Switcher */}
+          <div style={{
+            display: 'flex',
+            background: 'rgba(0,0,0,0.4)',
+            padding: '3px',
+            borderRadius: '8px',
+            border: '1px solid rgba(255,255,255,0.05)'
+          }}>
+            <button
+              onClick={() => setDesignMode('cinematic')}
+              className={`mode-toggle-btn ${designMode === 'cinematic' ? 'active-mode' : ''}`}
+            >
+              <Eye style={{ width: '12px', height: '12px' }} />
+              <span>Alpha: Cinematic</span>
+            </button>
+            <button
+              onClick={() => setDesignMode('executive')}
+              className={`mode-toggle-btn ${designMode === 'executive' ? 'active-mode' : ''}`}
+            >
+              <FileText style={{ width: '12px', height: '12px' }} />
+              <span>Beta: Executive</span>
+            </button>
+          </div>
+
+          {/* Telemetry badge */}
           <div style={{
             display: 'flex',
             alignItems: 'center',
@@ -128,18 +156,12 @@ export default function Header() {
               width: '6px',
               height: '6px',
               borderRadius: '50%',
-              backgroundColor: '#00F0FF',
-              boxShadow: '0 0 8px #00F0FF',
+              backgroundColor: designMode === 'executive' ? '#10B981' : '#00F0FF',
+              boxShadow: designMode === 'executive' ? '0 0 8px #10B981' : '0 0 8px #00F0FF',
+              transition: 'background-color 0.4s ease'
             }}></span>
-            <span>API LATENCY: {latency}ms</span>
+            <span>{designMode === 'executive' ? 'COMPLIANCE: ACTIVE' : `API LATENCY: ${latency}ms`}</span>
           </div>
-
-          <a href="#contact" className="btn-primary" style={{
-            padding: '10px 18px',
-            fontSize: '13px',
-          }}>
-            Initiate Consultation
-          </a>
         </div>
       </div>
 
@@ -164,7 +186,7 @@ export default function Header() {
           left: 0;
           width: 100%;
           height: 1px;
-          background: linear-gradient(90deg, #2E6BFF, #00F0FF);
+          background: linear-gradient(90deg, var(--primary), var(--secondary));
           transform: scaleX(0);
           transform-origin: right;
           transition: transform 0.3s ease;
@@ -173,7 +195,34 @@ export default function Header() {
           transform: scaleX(1);
           transform-origin: left;
         }
-        @media (max-width: 900px) {
+        .mode-toggle-btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 6px;
+          background: transparent;
+          border: none;
+          color: var(--text-secondary);
+          padding: 6px 12px;
+          border-radius: 6px;
+          font-size: 11px;
+          font-family: var(--font-display);
+          font-weight: 600;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        .mode-toggle-btn:hover {
+          color: #FFFFFF;
+        }
+        .mode-toggle-btn.active-mode {
+          color: #FFFFFF;
+          background: rgba(46, 107, 255, 0.15);
+          box-shadow: 0 2px 6px rgba(46, 107, 255, 0.15);
+        }
+        .executive-mode .mode-toggle-btn.active-mode {
+          background: rgba(30, 64, 175, 0.35);
+          box-shadow: 0 2px 6px rgba(30, 64, 175, 0.2);
+        }
+        @media (max-width: 1000px) {
           .desktop-nav, .telemetry-badge {
             display: none !important;
           }

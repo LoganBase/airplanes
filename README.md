@@ -2,22 +2,23 @@
 
 Welcome to the **LoganAviation** production-ready website prototype, engineered by **Amach**. 
 
-This system represents a state-of-the-art interactive demonstration of Amach's software capabilities in solving safety-critical, high-throughput, and NP-hard computational challenges for commercial aviation.
+This system features **two distinct, fully interactive design directions** that can be toggled live on the running site for side-by-side executive comparison.
 
 ---
 
-## 1. Executive & Strategic Vision
+## 1. Multi-Design Comparison Strategy
 
-The LoganAviation design system is architected around two core principles: **absolute technological superiority** and **ironclad enterprise trust**.
+We have delivered two distinct brand directions accessible via the **mode selector switch** in the header:
 
-### Design Layout & Rationale
-* **Ultra-Minimalist Cinematic Dark Mode:** Leveraging a deep `#05050A` space-black backdrop with high-contrast glowing elements (`#00F0FF`, `#2E6BFF`). This matches the aesthetic of high-tier technical developers (e.g., Stripe, Linear, Apple) while reducing eye fatigue during operational shift work.
-* **Interactive Flight Operations Logic Explorer:** An interactive, state-driven dashboard showing real-time simulations of:
-  * **Crew Constraint Satisfaction Problem (CSP):** Adjusting optimization priorities between flight hours and crew Quality of Life.
-  * **Irregular Operations (IROPs) Recovery Loop:** Triggering flight disruption events and witnessing auto-resolution.
-  * **Machine Learning Fuel Regressors:** Modifying cruise altitude and wind speeds to calculate optimal fuel savings.
-  * **Graph-Theoretic Baggage Telemetry:** Simulating BLOCKAGE anomalies and watching flow paths dynamically reroute.
-* **HTML5 Canvas Telemetry Grid:** A performant, mathematical particle network rendered in the Hero section, visualizing airport hubs and real-time transponder route curves.
+### 🚀 Version Alpha: Cinematic Dark
+* **Audience:** Innovation Directors, Modern Engineering Leads.
+* **Design & Feel:** Abstract neon glows, flight path transponder vectors, interactive canvas animations, fluid dark mode transitions, and modern UI elements.
+* **Core Rationale:** Projects high innovation, modern tech-native maturity, and cutting-edge software engineering capabilities.
+
+### 🏢 Version Beta: High-Trust Corporate Executive
+* **Audience:** Airline CEOs, CFOs, Board Members, Compliance Inspectors.
+* **Design & Feel:** Deep structured corporate navy/slate grids, solid emerald highlights (representing financial yield and return), clear numeric operational data tables, and structured charts mapping performance gains.
+* **Core Rationale:** Projects absolute enterprise stability, zero-downtime reliability, compliance assurance (FAA/EASA FTL/IATA 753), and measurable business returns.
 
 ---
 
@@ -28,26 +29,22 @@ We selected a lightweight, high-performance, and modern engineering stack:
 | Technology | Rationale |
 | :--- | :--- |
 | **Vite + React 19** | Sub-millisecond Hot Module Replacement (HMR), lightweight bundle size, and lightning-fast virtual DOM updates. |
-| **Vanilla CSS 3** | Designed with custom CSS variables (`index.css`) for maximum performance, hardware-accelerated animations, and zero framework hydration overhead. Avoids the lock-in and bloat of Tailwind configurations. |
+| **Vanilla CSS 3** | Designed with custom CSS variables (`index.css`) for maximum performance, hardware-accelerated animations, and zero framework hydration overhead. Supports instantaneous client-side theme switching. |
 | **Lucide Icons** | SVG-based vector icons for clean scaling and sub-pixel alignment on high-DPI displays. |
-| **HTML5 Canvas 2D API** | Custom particle pathfinders and radar scan rendering inside the client's rendering loop, avoiding high-overhead external canvas wrappers. |
+| **HTML5 Canvas 2D API** | Renders dynamic flight paths (Alpha Mode) or automated fuel regression line charts (Beta Mode) inside the browser's render loop without overhead. |
 
 ---
 
 ## 3. Simulated Elite Agency Contributions
 
-Under the instruction of the CEO and HR, an elite virtual engineering team was simulated to deliver this platform:
-
-* **UX Researcher & Airline Consultant:** Mapped high-value airline pain points (crew flight limits, slot restrictions, baggage chute failures, and fuel consumption formulas).
-* **UI/UX Designer:** Established the high-end, futuristic color tokens, typography scales, glassmorphism panel properties, and state transition guidelines.
-* **Lead Frontend Engineer:** Authored the responsive layouts, canvas telemetry calculations, interactive slider metrics, and reactive tab routing.
-* **Lead Backend Engineer:** Formulated the production code stubs in Go, Rust, and TypeScript shown in the Developer Lab, simulating real-world microservice data payloads.
+* **UX Researcher & Airline Consultant:** Mapped operational constraints (FAA 14 CFR Part 117 FTL rules, IATA Res 753 custody tracking, wind drag coefficients, and delay mitigation slot fees).
+* **UI/UX Designer:** Created two distinct coordinate style systems (Cinematic Neon vs. Corporate Emerald/Navy) mapped to simple global CSS class variables.
+* **Lead Frontend Engineer:** Integrated state-based component switches and responsive rendering layouts.
+* **Lead Backend Engineer:** Created concrete schema files (`schema.sql`) and API integration stubs (`api-spec.yaml`) representing high-fidelity backend architectures.
 
 ---
 
 ## 4. Local Installation & Hosting
-
-Follow these instructions to spin up the prototype locally on your workstation:
 
 ### Prerequisites
 * **Node.js** (v18.0.0 or higher recommended)
