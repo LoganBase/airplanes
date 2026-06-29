@@ -1,13 +1,26 @@
 import React from 'react';
-import { MapPin, Globe, ChevronRight } from 'lucide-react';
+import { MapPin, ChevronRight, Briefcase, Award } from 'lucide-react';
 
-export default function CareersSection() {
-  const hubs = [
+export default function CareersSection({ designMode }) {
+  // Alpha Cinematic/Technical Hub Definitions
+  const cinematicHubs = [
     { city: 'Dublin', role: 'Global HQ & AI Labs', desc: 'Managing core constraint solvers, flight scheduling graph engines, and cloud scaling infrastructure.' },
     { city: 'London', role: 'Commercial Operations & Cloud Dev', desc: 'Deploying secure AWS, Azure, and Google Cloud systems for airline enterprise partners.' },
     { city: 'Bucharest', role: 'High-Throughput Engineering', desc: 'Specializing in Rust, Go, and Kafka event streaming pipeline architectures.' },
     { city: 'Dubai', role: 'MENA Integration Hub', desc: 'Interfacing directly with premier Middle Eastern carriers for on-site operations integrations.' }
   ];
+
+  // Beta Executive/Sales Hub Definitions
+  const executiveHubs = [
+    { city: 'Dublin', role: 'Corporate Headquarters', desc: 'Directing global airline program delivery, regulatory board compliance, and executive client advisory services.' },
+    { city: 'London', role: 'Enterprise Client Partnerships', desc: 'Providing AWS/Azure program delivery, system compliance management, and regional account oversight.' },
+    { city: 'Bucharest', role: 'SLA & Performance Engineering', desc: 'Architecting high-availability systems, low-latency transaction processing, and data security audits.' },
+    { city: 'Dubai', role: 'MENA Operations Gateway', desc: 'Managing regional airline integrations, commercial implementation desk, and local enterprise operations support.' }
+  ];
+
+  const hubs = designMode === 'executive' ? executiveHubs : cinematicHubs;
+  const accentColor = designMode === 'executive' ? '#10B981' : '#00F0FF';
+  const pulseColor = designMode === 'executive' ? 'rgba(16, 185, 129, 0.4)' : 'rgba(0, 240, 255, 0.4)';
 
   return (
     <section id="hubs" style={{
@@ -20,13 +33,16 @@ export default function CareersSection() {
         
         {/* Title */}
         <div style={{ textAlign: 'center', maxWidth: '700px', margin: '0 auto 60px auto' }}>
-          <span className="badge" style={{ marginBottom: '16px' }}>GLOBAL OPERATIONS</span>
+          <span className="badge" style={{ marginBottom: '16px' }}>
+            {designMode === 'executive' ? 'GLOBAL OPERATIONS DESKS' : 'GLOBAL OPERATIONS'}
+          </span>
           <h2 style={{ fontSize: '38px', marginBottom: '16px' }}>
-            Our Global Operations Hubs
+            {designMode === 'executive' ? 'Our Regional Operations Centers' : 'Our Global Operations Hubs'}
           </h2>
           <p style={{ color: 'var(--text-secondary)' }}>
-            We work where aviation happens. Our engineers deploy and support safety-critical systems 
-            across major global travel hubs.
+            {designMode === 'executive'
+              ? 'Our systems deliver 24/7/365 operational resilience. Our regional offices manage program delivery and local carrier integrations.'
+              : 'We work where aviation happens. Our engineers deploy and support safety-critical systems across major global travel hubs.'}
           </p>
         </div>
 
@@ -41,7 +57,7 @@ export default function CareersSection() {
             <div key={idx} className="glass-panel" style={{
               padding: '28px',
               borderRadius: '12px',
-              border: '1px solid rgba(46, 107, 255, 0.08)',
+              border: designMode === 'executive' ? '1px solid rgba(30, 64, 175, 0.15)' : '1px solid rgba(46, 107, 255, 0.08)',
               display: 'flex',
               flexDirection: 'column',
               gap: '16px',
@@ -49,20 +65,29 @@ export default function CareersSection() {
             }}>
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                  <MapPin style={{ width: '18px', height: '18px', color: '#00F0FF' }} />
+                  <MapPin style={{ width: '18px', height: '18px', color: accentColor, transition: 'color 0.4s ease' }} />
                   <span style={{ fontSize: '18px', fontWeight: 700, color: '#FFF', fontFamily: 'var(--font-display)' }}>
                     {hub.city}
                   </span>
                 </div>
-                <span className="pulse-indicator"></span>
+                {/* Dynamically styled pulsing dot */}
+                <div style={{
+                  width: '8px',
+                  height: '8px',
+                  background: accentColor,
+                  borderRadius: '50%',
+                  boxShadow: `0 0 8px ${accentColor}`,
+                  transition: 'background-color 0.4s ease, box-shadow 0.4s ease'
+                }}></div>
               </div>
               <div>
                 <span style={{
                   fontFamily: 'var(--font-mono)',
                   fontSize: '11px',
-                  color: '#2E6BFF',
+                  color: designMode === 'executive' ? '#10B981' : '#2E6BFF',
                   textTransform: 'uppercase',
-                  letterSpacing: '0.05em'
+                  letterSpacing: '0.05em',
+                  transition: 'color 0.4s ease'
                 }}>
                   {hub.role}
                 </span>
@@ -74,26 +99,34 @@ export default function CareersSection() {
           ))}
         </div>
 
-        {/* Careers banner */}
+        {/* Careers/Advisory Banner */}
         <div className="glass-panel" style={{
           padding: '32px',
           borderRadius: '14px',
-          background: 'linear-gradient(135deg, rgba(46, 107, 255, 0.06) 0%, rgba(106, 0, 255, 0.03) 100%)',
-          border: '1px solid rgba(46, 107, 255, 0.12)',
+          background: designMode === 'executive'
+            ? 'linear-gradient(135deg, rgba(16, 185, 129, 0.05) 0%, rgba(30, 64, 175, 0.03) 100%)'
+            : 'linear-gradient(135deg, rgba(46, 107, 255, 0.06) 0%, rgba(106, 0, 255, 0.03) 100%)',
+          border: designMode === 'executive'
+            ? '1px solid rgba(16, 185, 129, 0.15)'
+            : '1px solid rgba(46, 107, 255, 0.12)',
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
           flexWrap: 'wrap',
           gap: '24px',
-          textAlign: 'left'
+          textAlign: 'left',
+          transition: 'all 0.4s ease'
         }}>
           <div style={{ maxWidth: '600px' }}>
             <h3 style={{ fontSize: '22px', marginBottom: '8px', color: '#FFF' }}>
-              Want to solve the hardest problems in code?
+              {designMode === 'executive'
+                ? 'Evaluate your operational system resilience'
+                : 'Want to solve the hardest problems in code?'}
             </h3>
             <p style={{ fontSize: '14px', color: 'var(--text-secondary)' }}>
-              Join a team of elite, specialized frontend, backend, and machine learning engineers. 
-              We are actively hiring for core systems developers in Dublin, Bucharest, and London.
+              {designMode === 'executive'
+                ? 'Request an executive advisory session. Our program delivery team will conduct a thorough compatibility audit of your airline infrastructure.'
+                : 'Join a team of elite, specialized frontend, backend, and machine learning engineers. We are actively hiring for core systems developers in Dublin, Bucharest, and London.'}
             </p>
           </div>
           <a href="#contact" className="btn-secondary" style={{
@@ -102,37 +135,22 @@ export default function CareersSection() {
             gap: '8px',
             whiteSpace: 'nowrap'
           }}>
-            <span>View Positions</span>
+            {designMode === 'executive' ? (
+              <>
+                <Award style={{ width: '16px', height: '16px', color: '#10B981' }} />
+                <span>Schedule Operations Audit</span>
+              </>
+            ) : (
+              <>
+                <Briefcase style={{ width: '16px', height: '16px', color: '#2E6BFF' }} />
+                <span>Explore Positions</span>
+              </>
+            )}
             <ChevronRight style={{ width: '16px', height: '16px' }} />
           </a>
         </div>
 
       </div>
-
-      <style>{`
-        .pulse-indicator {
-          width: 8px;
-          height: 8px;
-          background: #00F0FF;
-          border-radius: 50%;
-          box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
-          animation: pulsePoint 2s infinite;
-        }
-        @keyframes pulsePoint {
-          0% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(0, 240, 255, 0.7);
-          }
-          70% {
-            transform: scale(1);
-            box-shadow: 0 0 0 8px rgba(0, 240, 255, 0);
-          }
-          100% {
-            transform: scale(0.95);
-            box-shadow: 0 0 0 0 rgba(0, 240, 255, 0);
-          }
-        }
-      `}</style>
     </section>
   );
 }
