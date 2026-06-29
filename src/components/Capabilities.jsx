@@ -1,45 +1,13 @@
 import React from 'react';
 import { ShieldCheck, Cpu, Code2, Server, Globe2, BarChart4 } from 'lucide-react';
 
+// Import local assets for visual cards
+import runwayLanding from '../assets/runway_landing.jpg';
+import operationsControl from '../assets/operations_control.jpg';
+import airplaneWingFlight from '../assets/airplane_wing_flight.jpg';
+
 export default function Capabilities({ designMode }) {
-  const cards = designMode === 'executive' ? [
-    {
-      icon: <Cpu style={{ width: '24px', height: '24px', color: '#10B981' }} />,
-      title: 'FTL Regulation Optimizers',
-      desc: 'Formally verified constraint solvers satisfying FAA 14 CFR Part 117 and EASA FTL block time caps. Guarantees zero schedule compliance breaches.',
-      stat: '100% Compliant Pairings'
-    },
-    {
-      icon: <ShieldCheck style={{ width: '24px', height: '24px', color: '#10B981' }} />,
-      title: 'Secure Flight Telemetry Streams',
-      desc: 'Sub-85ms transponder telemetry ingestion pipelines utilizing secure TLS 1.3 encryption. Fully decoupled from public networks for air carrier safety.',
-      stat: '<85ms Ingestion Latency'
-    },
-    {
-      icon: <Code2 style={{ width: '24px', height: '24px', color: '#10B981' }} />,
-      title: 'IATA 753 Baggage Infrastructure',
-      desc: 'Custodian transfer tracking modeled as formal state-charts. Seamlessly integrates with passenger boarding gates and carousel sortation chutes.',
-      stat: 'IATA 753 Fully Compliant'
-    },
-    {
-      icon: <Server style={{ width: '24px', height: '24px', color: '#10B981' }} />,
-      title: 'Optimal Ascent ML Estimators',
-      desc: 'Supervised regression pipelines predicting headwind drag coefficients to calculate altitude stepping. Reduces fuel burn and greenhouse offset costs.',
-      stat: '4.2% Fuel Offset Saved'
-    },
-    {
-      icon: <Globe2 style={{ width: '24px', height: '24px', color: '#10B981' }} />,
-      title: 'Encrypted Multi-Cloud Nodes',
-      desc: 'Enterprise deployments spanning AWS GovCloud and Azure for Government. Configured with geo-distributed failover networks with 99.999% uptime objectives.',
-      stat: '99.999% Availability SLO'
-    },
-    {
-      icon: <BarChart4 style={{ width: '24px', height: '24px', color: '#10B981' }} />,
-      title: 'IROPs Financial Mitigation Loops',
-      desc: 'Event-driven disruption routing that computes alternative airframe allocations. Balances passenger compensation claims against crew standby overhead.',
-      stat: '92% Claim Payout Saved'
-    }
-  ] : [
+  const cards = [
     {
       icon: <Cpu style={{ width: '24px', height: '24px', color: '#00F0FF' }} />,
       title: 'CSP Optimization Solvers',
@@ -102,71 +70,158 @@ export default function Capabilities({ designMode }) {
         {/* Title */}
         <div style={{ maxWidth: '650px', marginBottom: '60px', textAlign: 'left' }}>
           <span className="badge" style={{ marginBottom: '16px' }}>
-            {designMode === 'executive' ? 'SYSTEM CERTIFICATIONS' : 'SYSTEM CAPABILITIES'}
+            {designMode === 'executive' ? 'OPERATIONAL METRICS' : 'SYSTEM CAPABILITIES'}
           </span>
           <h2 style={{ fontSize: '38px', marginBottom: '16px' }}>
-            {designMode === 'executive' ? 'Compliance & Security Framework' : 'Mission-Critical Architecture'}
+            {designMode === 'executive' ? 'Resilience & Compliance Matrix' : 'Mission-Critical Architecture'}
           </h2>
           <p style={{ color: 'var(--text-secondary)' }}>
             {designMode === 'executive'
-              ? 'Our solutions are built with a primary focus on strict civil aviation compliance, enterprise scale, and audited financial returns.'
+              ? 'Verifiable performance targets achieved across global carrier network integrations.'
               : 'Our simulated digital agency team mapped, designed, and architected these core pillars to solve the absolute highest-value friction points in modern commercial aviation.'}
           </p>
         </div>
 
-        {/* Grid */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
-          gap: '24px'
-        }}>
-          {cards.map((card, idx) => (
-            <div key={idx} className="glass-panel" style={{
-              padding: '32px',
+        {/* Dynamic Mode Grid */}
+        {designMode === 'executive' ? (
+          /* BETA EXECUTIVE MODE: High Impact 3-Column Image Grid */
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '28px'
+          }}>
+            {/* Card 1: Runway Landing */}
+            <div className="glass-panel visual-cap-card" style={{
+              height: '420px',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              position: 'relative',
               display: 'flex',
               flexDirection: 'column',
-              justifyContent: 'space-between',
-              gap: '24px',
-              borderRadius: '14px',
-              border: designMode === 'executive' ? '1px solid rgba(30, 64, 175, 0.15)' : '1px solid rgba(46, 107, 255, 0.08)'
+              justifyContent: 'flex-end',
+              padding: '40px',
+              border: '1px solid rgba(30, 64, 175, 0.25)'
             }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', textAlign: 'left' }}>
-                <div style={{
-                  width: '48px',
-                  height: '48px',
-                  borderRadius: '10px',
-                  background: designMode === 'executive' ? 'rgba(30, 64, 175, 0.08)' : 'rgba(46, 107, 255, 0.08)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  border: designMode === 'executive' ? '1px solid rgba(30, 64, 175, 0.15)' : '1px solid rgba(46, 107, 255, 0.15)'
-                }}>
-                  {card.icon}
+              <img src={runwayLanding} alt="FTL Compliance" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1, filter: 'brightness(0.55)' }} />
+              <div style={{ position: 'relative', zIndex: 2, textAlign: 'left' }}>
+                <span className="badge" style={{ background: 'rgba(16,185,129,0.1)', borderColor: 'rgba(16,185,129,0.3)', color: '#10B981', marginBottom: '12px' }}>ROSTERING SOLVER</span>
+                <div style={{ fontSize: '36px', fontWeight: 800, color: '#FFF', fontFamily: 'var(--font-display)', lineHeight: 1.1, marginBottom: '6px' }}>
+                  100% COMPLIANT
                 </div>
-                <h3 style={{ fontSize: '20px', color: '#FFFFFF' }}>{card.title}</h3>
-                <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{card.desc}</p>
-              </div>
-
-              {/* Status footer */}
-              <div style={{
-                paddingTop: '16px',
-                borderTop: '1px solid rgba(255, 255, 255, 0.03)',
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'space-between',
-                fontFamily: 'var(--font-mono)',
-                fontSize: '11px'
-              }}>
-                <span style={{ color: 'var(--text-muted)' }}>
-                  {designMode === 'executive' ? 'AUDIT VERIFICATION:' : 'PERFORMANCE INDEX:'}
-                </span>
-                <span style={{ color: designMode === 'executive' ? '#10B981' : '#00F0FF', fontWeight: 600 }}>{card.stat}</span>
+                <div style={{ fontSize: '15px', color: '#E2E8F0', fontWeight: 600, marginBottom: '4px' }}>FAA Part 117 & EASA FTL</div>
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>Algorithmic duty hour checks.</p>
               </div>
             </div>
-          ))}
-        </div>
+
+            {/* Card 2: Operations Control Room */}
+            <div className="glass-panel visual-cap-card" style={{
+              height: '420px',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              padding: '40px',
+              border: '1px solid rgba(30, 64, 175, 0.25)'
+            }}>
+              <img src={operationsControl} alt="SLA Streams" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1, filter: 'brightness(0.55)' }} />
+              <div style={{ position: 'relative', zIndex: 2, textAlign: 'left' }}>
+                <span className="badge" style={{ background: 'rgba(16,185,129,0.1)', borderColor: 'rgba(16,185,129,0.3)', color: '#10B981', marginBottom: '12px' }}>TELEMETRY STREAM</span>
+                <div style={{ fontSize: '36px', fontWeight: 800, color: '#FFF', fontFamily: 'var(--font-display)', lineHeight: 1.1, marginBottom: '6px' }}>
+                  99.999% UPTIME
+                </div>
+                <div style={{ fontSize: '15px', color: '#E2E8F0', fontWeight: 600, marginBottom: '4px' }}>Decoupled Data Pipeline</div>
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>&lt;85ms ingestion latency bounds.</p>
+              </div>
+            </div>
+
+            {/* Card 3: Airplane Wing In Flight */}
+            <div className="glass-panel visual-cap-card" style={{
+              height: '420px',
+              borderRadius: '16px',
+              overflow: 'hidden',
+              position: 'relative',
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'flex-end',
+              padding: '40px',
+              border: '1px solid rgba(30, 64, 175, 0.25)'
+            }}>
+              <img src={airplaneWingFlight} alt="Fuel Optimization" style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', zIndex: 1, filter: 'brightness(0.55)' }} />
+              <div style={{ position: 'relative', zIndex: 2, textAlign: 'left' }}>
+                <span className="badge" style={{ background: 'rgba(16,185,129,0.1)', borderColor: 'rgba(16,185,129,0.3)', color: '#10B981', marginBottom: '12px' }}>FUEL MACHINE LEARNING</span>
+                <div style={{ fontSize: '36px', fontWeight: 800, color: '#FFF', fontFamily: 'var(--font-display)', lineHeight: 1.1, marginBottom: '6px' }}>
+                  -4.2% FUEL BURN
+                </div>
+                <div style={{ fontSize: '15px', color: '#E2E8F0', fontWeight: 600, marginBottom: '4px' }}>Optimal Altitude Stepping</div>
+                <p style={{ fontSize: '13px', color: 'var(--text-secondary)' }}>Predictive ML drag calculations.</p>
+              </div>
+            </div>
+          </div>
+        ) : (
+          /* ALPHA CINEMATIC MODE: Detailed text cards */
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))',
+            gap: '24px'
+          }}>
+            {cards.map((card, idx) => (
+              <div key={idx} className="glass-panel" style={{
+                padding: '32px',
+                display: 'flex',
+                flexDirection: 'column',
+                justifyContent: 'space-between',
+                gap: '24px',
+                borderRadius: '14px',
+                border: '1px solid rgba(46, 107, 255, 0.08)'
+              }}>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', textAlign: 'left' }}>
+                  <div style={{
+                    width: '48px',
+                    height: '48px',
+                    borderRadius: '10px',
+                    background: 'rgba(46, 107, 255, 0.08)',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    border: '1px solid rgba(46, 107, 255, 0.15)'
+                  }}>
+                    {card.icon}
+                  </div>
+                  <h3 style={{ fontSize: '20px', color: '#FFFFFF' }}>{card.title}</h3>
+                  <p style={{ fontSize: '14px', color: 'var(--text-secondary)', lineHeight: 1.6 }}>{card.desc}</p>
+                </div>
+
+                {/* Status footer */}
+                <div style={{
+                  paddingTop: '16px',
+                  borderTop: '1px solid rgba(255, 255, 255, 0.03)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '11px'
+                }}>
+                  <span style={{ color: 'var(--text-muted)' }}>
+                    PERFORMANCE INDEX:
+                  </span>
+                  <span style={{ color: '#00F0FF', fontWeight: 600 }}>{card.stat}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
 
       </div>
+      <style>{`
+        .visual-cap-card img {
+          transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+        .visual-cap-card:hover img {
+          transform: scale(1.05);
+        }
+      `}</style>
     </section>
   );
 }
