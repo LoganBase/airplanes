@@ -110,6 +110,15 @@ h1, h2, h3, h4, h5, h6 {
   background-clip: text;
 }
 
+.glow-text-primary {
+  background: linear-gradient(135deg, #00F0FF 0%, #2E6BFF 50%, #6A00FF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 0 40px rgba(46, 107, 255, 0.1);
+  display: inline;
+}
+
 .glow-text-cyan {
   background: linear-gradient(90deg, #00F0FF, #2E6BFF);
   -webkit-background-clip: text;

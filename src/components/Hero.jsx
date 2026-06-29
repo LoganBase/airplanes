@@ -286,24 +286,13 @@ export default function Hero({ designMode }) {
             {designMode === 'executive' ? (
               <>
                 High-Trust Software <br />
-                <span style={{
-                  background: 'linear-gradient(135deg, #FFF 0%, #94A3B8 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                }}>Engineering for</span> <br />
+                <span className="gradient-text">Engineering for</span> <br />
                 Commercial Aviation.
               </>
             ) : (
               <>
                 Building <br />
-                <span style={{
-                  background: 'linear-gradient(135deg, #00F0FF 0%, #2E6BFF 50%, #6A00FF 100%)',
-                  WebkitBackgroundClip: 'text',
-                  WebkitTextFillColor: 'transparent',
-                  backgroundClip: 'text',
-                  textShadow: '0 0 40px rgba(46, 107, 255, 0.1)',
-                }}>High-Throughput</span> <br />
+                <span className="glow-text-primary">High-Throughput</span> <br />
                 Aviation Engines.
               </>
             )}
